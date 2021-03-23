@@ -1,0 +1,29 @@
+<h2>Liste des transactions non validées</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>ID_MOBILE_MONEY</th>
+            <th>CLIENT</th>
+            <th>NUMERO</th>
+            <th>VALEUR</th>
+            <th>DATE DE MOUVEMENT</th>
+            <th>FRAIS</th>
+            <th>VALIDATION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let joueur of MvlNonValide">
+            <td>{{ joueur.id_mobile_money }}</td>
+            <td>{{ joueur.nom }}</td>
+            <td>{{ joueur.num }}</td>
+            <td>{{ joueur.value }}</td>
+            <td>{{ joueur.date_mvt }}</td>
+            <td>{{ joueur.frais }}</td>
+            <td><a [routerLink] = "['agreement']" [queryParams] = '{idmvt : joueur.idmvt, value : joueur.value, num: joueur.num,date_mvt :joueur.date_mvt}'>
+                <button>Valider</button>
+            </a></td>
+        </tr>
+        <tbody>
+    </table>
+</div>

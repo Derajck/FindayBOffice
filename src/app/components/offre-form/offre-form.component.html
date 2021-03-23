@@ -1,0 +1,50 @@
+<body>
+  <div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>OFFRE</th>
+            <th>Type d'offre</th>
+            <th>PRIX</th>
+            <th>Durée de validité (h)</th>
+            <th>Valeur</th>
+            <th>Ar-Mo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let joueur of detailOffre">
+            <td>{{ joueur.nom_offre }}</td>
+            <td>{{ joueur.nom_type_offre }}</td>
+            <td>{{ joueur.value }}</td>
+            <td>{{ joueur.duree_valide }}</td>
+            <td>{{ joueur.valeur_ot }}</td>
+            <td>{{ joueur.appel }}</td>
+        </tr>
+        <tbody>
+    </table>
+</div>
+    <div class="testbox">
+      <fieldset>
+        <h1>Insertion d'offre</h1>
+        <div class="item">
+          <p>Nom d'offre</p>
+          <input type="text" [(ngModel)]="nom_offre" />
+          
+        </div>
+        <div class="item">
+          <p>Cout</p>
+          <div class="name-item">
+            <input type="number" min="0" [(ngModel)]="value"  placeholder="Ar" />
+            <input type="number" min="1" [(ngModel)]="duree_valide"  placeholder="Duree de validite (h)" />
+            <input type="number" placeholder="Priorite" [(ngModel)]="prio" />
+          </div>
+        </div>
+        <span class="error">{{ error_message }}</span> <br/>
+        <span class="success">{{ message }}</span> <br/>
+        <div class="btn-block">
+          <button (click) = "generalInsert()">INSERER</button>
+        </div>
+      </fieldset>
+    </div>
+    
+</body>

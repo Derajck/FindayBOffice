@@ -1,0 +1,8 @@
+<div>
+    <h3>Accepter Transaction {{ idmvt }} de valeur:  {{ value }} Ar de {{date_mvt}}</h3>
+    <button (click) = "agreeMvt()">Accepter</button>
+    <button [routerLink]="['/liste']">Annuler</button><br>
+    <span class="error">{{ error_message }}</span> <br>
+    <span class="success">{{ message }}</span> <br>
+    
+</div>

@@ -9,14 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --prod"
-    
-    
-    //"dev": "react-scripts start",
-    //"start": "serve -s build",
-    //"build": "react-scripts build",
-    //"test": "react-scripts test --env=jsdom",
-    //"eject": "react-scripts eject",
-    //"heroku-postbuild": "npm run build"
   },
   "private": true,
   "dependencies": {

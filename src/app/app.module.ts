@@ -22,9 +22,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { UpdateOffreComponent } from './components/update-offre/update-offre.component';
 import { UpdateOffreAndTypeComponent } from './components/update-offre-and-type/update-offre-and-type.component';
-// import { ChartGraphComponent } from './components/chart-graph/chart-graph.component';
-// import { HighchartsChartComponent } from 'highcharts-angular';
-// import { ChartGraphComponent } from './AdminFunc/chart-graph/chart-graph.component';
+import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DeleteTypeOffreComponent } from './AdminFunc/delete-type-offre/delete-type-offre.component'; 
 
@@ -51,6 +49,7 @@ import { DeleteTypeOffreComponent } from './AdminFunc/delete-type-offre/delete-t
     HttpClientModule,
     CommonModule,
     FormsModule,
+    MatButtonModule,
     MatProgressSpinnerModule
     // Ng4LoadingSpinnerModule.forRoot()
   ],

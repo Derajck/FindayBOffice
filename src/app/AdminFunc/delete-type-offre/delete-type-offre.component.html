@@ -1,0 +1,8 @@
+<div>
+    <h3>Supprimer offre  {{ nom_offre_type }} de {{ nom_offres }}</h3>
+    <button class="cancel"  (click) = "agreeMvt()">Accepter</button>
+    <hr>
+    <button [routerLink]="['/liste']">Annuler</button><br>
+    <span class="error">{{ error_message }}</span> <br>
+    <span class="success">{{ message }}</span> <br>
+</div>

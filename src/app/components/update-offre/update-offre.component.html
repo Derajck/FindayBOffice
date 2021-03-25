@@ -1,0 +1,25 @@
+<div class="testbox">
+    <fieldset>
+      <!-- <mat-spinner color="warn"></mat-spinner> -->
+      <h1>Update {{ nom_offre_init }}</h1>
+      <div class="item">
+        <p>Nom d'offre</p>
+        <input type="text" [(ngModel)]="nom_offre" />
+        
+      </div>
+      <div class="item">
+        <p>Coût / Validite / Priorité</p>
+        <div class="name-item">
+          <input type="number" min="0" [(ngModel)]="cout"  placeholder="Ar" />
+          <input type="number" min="1" [(ngModel)]="duree_valide"  placeholder="Duree de validite (h)" />
+          <input type="number" placeholder="Priorite" [(ngModel)]="priorite" />
+        </div>
+      </div>
+      <span class="error">{{ error_message }}</span> <br/>
+      <span class="success">{{ message }}</span> <br/>
+      <div class="btn-block">
+        <button (click) = "UpdateGen()">UPDATE</button>
+      </div>
+    </fieldset>
+    <hr>
+  </div>

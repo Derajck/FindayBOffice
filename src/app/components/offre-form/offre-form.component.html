@@ -13,12 +13,13 @@
         </thead>
         <tbody>
         <tr *ngFor = "let joueur of detailOffre">
-            <td>{{ joueur.nom_offre }}</td>
-            <td>{{ joueur.nom_type_offre }}</td>
+            <td><a [routerLink] = "['modifierOffre']" [queryParams] ='{nom_offre: joueur.nom_offre ,cout:joueur.value,priorite : joueur.priorite, validite: joueur.duree_valide }'> {{ joueur.nom_offre }} </a></td>
+            <td><a [routerLink] = "['modifierTypeOffre']" [queryParams] ='{nom_offres: joueur.nom_offre ,nom_type_offre: joueur.nom_type_offre ,valeur: joueur.valeur_ot,initial:joueur.appel, id_offre_and_type: joueur.id_offre_and_type }'>{{ joueur.nom_type_offre }}</a></td>
             <td>{{ joueur.value }}</td>
             <td>{{ joueur.duree_valide }}</td>
             <td>{{ joueur.valeur_ot }}</td>
             <td>{{ joueur.appel }}</td>
+            <td><a [routerLink] = "['deleteTypeOffre']" [queryParams] ='{nom_offre_type: joueur.nom_type_offre ,nom_offres: joueur.nom_offre , id_offre_and_type: joueur.id_offre_and_type }'>delete</a></td>
         </tr>
         <tbody>
     </table>

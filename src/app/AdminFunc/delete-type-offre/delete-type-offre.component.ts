@@ -3,29 +3,24 @@ import { ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
-  selector: 'app-agree-mvt',
-  templateUrl: './agree-mvt.component.html',
-  styleUrls: ['./agree-mvt.component.css']
+  selector: 'app-delete-type-offre',
+  templateUrl: './delete-type-offre.component.html',
+  styleUrls: ['./delete-type-offre.component.css']
 })
-export class AgreeMVTComponent implements OnInit {
+export class DeleteTypeOffreComponent implements OnInit {
+  id_offre_and_type : any ='';
+  nom_offre_type : any ='';
+  nom_offres : any ='';
 
-  idmvt : any ='';
-  value : any ='';
-  num: any ='';
-  date_mvt :any ='';
-  
   error_message:string ='';
   message : string ='';
-
   constructor(private route : ActivatedRoute,private adminService : AdminService) { }
 
   ngOnInit(): void {
-    this.idmvt=this.route.snapshot.queryParamMap.get('idmvt');
-    this.value=this.route.snapshot.queryParamMap.get('value');
-    this.num=this.route.snapshot.queryParamMap.get('num');
-    this.date_mvt =this.route.snapshot.queryParamMap.get('date_mvt');
+    this.id_offre_and_type=this.route.snapshot.queryParamMap.get('id_offre_and_type');
+    this.nom_offre_type=this.route.snapshot.queryParamMap.get('nom_offre_type');
+    this.nom_offres=this.route.snapshot.queryParamMap.get('nom_offres');
   }
-
   agreeMvt(){
     const input = {
       validation:0
@@ -44,7 +39,6 @@ export class AgreeMVTComponent implements OnInit {
       this.error_message = 'Erreur requete';
     }
 
-    this.adminService.accept(this.idmvt, input).subscribe(onSuccess, onError);
+    this.adminService.deleteOffreType(this.id_offre_and_type).subscribe(onSuccess, onError);
   }
-
 }

@@ -1,0 +1,21 @@
+<div class="testbox">
+    <fieldset>
+      <h1>Update valeur de {{nom_offres}} - {{ nom_type_offre_init }}</h1>
+      <div class="item">
+        <p>Nom d'offre</p>
+        <input type="text" [(ngModel)]="nom_type_offre" disabled />
+      </div>
+      <div class="item">
+        <p>Valeur {{initial}}</p>
+        <div class="name-item">
+          <input type="number" min="0" [(ngModel)]="valeur"/>
+        </div>
+      </div>
+      <span class="error">{{ error_message }}</span> <br/>
+      <span class="success">{{ message }}</span> <br/>
+      <div class="btn-block">
+        <button (click) = "UpdateGen()">UPDATE</button>
+      </div>
+    </fieldset>
+    <hr>
+  </div>

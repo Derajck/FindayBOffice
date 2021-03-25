@@ -62,7 +62,7 @@ export class OffreFormComponent implements OnInit {
       this.error_message='Veuillez saisir correctement la valeur';
     }if(this.duree_valide<=0 || this.duree_valide===""  ){
       this.error_message='Veuillez saisir correctement la durée';
-    }if(this.prio<=0 || this.duree_valide===""  ){
+    }if(this.prio<=0 || this.prio===""  ){
       this.error_message='Veuillez définir correctement la priorité';
     }else{
       this.validite=true;

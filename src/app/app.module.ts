@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';s
+
 import { HttpClientModule } from '@angular/common/http';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListeComponent } from './components/liste/liste.component';
@@ -17,9 +19,14 @@ import { DetailOffreFormComponent } from './components/detail-offre-form/detail-
 import { ChartChAffJournComponent } from './components/chart-ch-aff-journ/chart-ch-aff-journ.component';
 import { ChartChFrqcJournComponent } from './components/chart-ch-frqc-journ/chart-ch-frqc-journ.component';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './components/login/login.component';
+import { UpdateOffreComponent } from './components/update-offre/update-offre.component';
+import { UpdateOffreAndTypeComponent } from './components/update-offre-and-type/update-offre-and-type.component';
 // import { ChartGraphComponent } from './components/chart-graph/chart-graph.component';
 // import { HighchartsChartComponent } from 'highcharts-angular';
 // import { ChartGraphComponent } from './AdminFunc/chart-graph/chart-graph.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { DeleteTypeOffreComponent } from './AdminFunc/delete-type-offre/delete-type-offre.component'; 
 
 @NgModule({
   declarations: [
@@ -33,9 +40,10 @@ import { CommonModule } from '@angular/common';
     DetailOffreFormComponent,
     ChartChAffJournComponent,
     ChartChFrqcJournComponent,
-    // BrowserAnimationsModule
-    // MatProgressSpinnerModule
-    // ChartGraphComponent
+    LoginComponent,
+    UpdateOffreComponent,
+    UpdateOffreAndTypeComponent,
+    DeleteTypeOffreComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +51,12 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    // MatProgressSpinnerModule, MatRadioModule, MatSliderModule
-    // MatProgressSpinnerModule
+    MatProgressSpinnerModule
+    // Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

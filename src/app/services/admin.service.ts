@@ -75,4 +75,19 @@ insertOffreType (input) {
     return this.http.get(base_url + '/depotvalide/'+idmvt );
   }
 
+  updateOffre (nomOffre, input) {
+    const options = this.toolsServ.formOption(); // headers
+    return this.http.put(base_url + '/offreupdate/' + nomOffre, input, options);
+  }
+
+  updateOffreType (idOffreType, input) {
+    const options = this.toolsServ.formOption(); // headers
+    return this.http.put(base_url + '/updateoffreandtype/' + idOffreType, input, options);
+  }
+
+  deleteOffreType (idOffreType) {
+    const options = this.toolsServ.formOption(); // headers
+    return this.http.delete(base_url + '/deleteoffreandtype/' + idOffreType, options);
+  }
+  
 }

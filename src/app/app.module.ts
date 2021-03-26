@@ -43,6 +43,7 @@ import {MatIconModule} from '@angular/material/icon'
     UpdateOffreComponent,
     UpdateOffreAndTypeComponent,
     DeleteTypeOffreComponent
+    // Ng4LoadingSpinnerModule.forRoot()
   ],
   imports: [
     BrowserModule,
@@ -53,7 +54,7 @@ import {MatIconModule} from '@angular/material/icon'
     MatButtonModule,
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
     // Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [],

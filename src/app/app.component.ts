@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AdminService } from './services/admin.service';
+// import {MatIconModule} from '@angular/material/icon';
 // import {BrowserAnimationsModule} from '@angular/platform browser/animations';
 // import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 

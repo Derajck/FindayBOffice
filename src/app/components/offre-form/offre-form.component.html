@@ -3,23 +3,25 @@
     <table class="fl-table">
         <thead>
         <tr>
-            <th>OFFRE</th>
+            <th>OFFRE </th>
             <th>Type d'offre</th>
             <th>PRIX</th>
             <th>Durée de validité (h)</th>
             <th>Valeur</th>
             <th>Ar-Mo</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor = "let joueur of detailOffre">
-            <td><a [routerLink] = "['modifierOffre']" [queryParams] ='{nom_offre: joueur.nom_offre ,cout:joueur.value,priorite : joueur.priorite, validite: joueur.duree_valide }'> {{ joueur.nom_offre }} </a></td>
-            <td><a [routerLink] = "['modifierTypeOffre']" [queryParams] ='{nom_offres: joueur.nom_offre ,nom_type_offre: joueur.nom_type_offre ,valeur: joueur.valeur_ot,initial:joueur.appel, id_offre_and_type: joueur.id_offre_and_type }'>{{ joueur.nom_type_offre }}</a></td>
+            <td><mat-icon [routerLink] = "['modifierOffre']" [queryParams] ='{nom_offre: joueur.nom_offre ,cout:joueur.value,priorite : joueur.priorite, validite: joueur.duree_valide }'>edit</mat-icon> {{ joueur.nom_offre }} </td>
+            <td><mat-icon [routerLink] = "['modifierTypeOffre']" [queryParams] ='{nom_offres: joueur.nom_offre ,nom_type_offre: joueur.nom_type_offre ,valeur: joueur.valeur_ot,initial:joueur.appel, id_offre_and_type: joueur.id_offre_and_type }'>edit_note</mat-icon>{{ joueur.nom_type_offre }}</td>
             <td>{{ joueur.value }}</td>
             <td>{{ joueur.duree_valide }}</td>
             <td>{{ joueur.valeur_ot }}</td>
             <td>{{ joueur.appel }}</td>
-            <td><a [routerLink] = "['deleteTypeOffre']" [queryParams] ='{nom_offre_type: joueur.nom_type_offre ,nom_offres: joueur.nom_offre , id_offre_and_type: joueur.id_offre_and_type }'>delete</a></td>
+            <td><mat-icon [routerLink] = "['deleteTypeOffre']" [queryParams] ='{nom_offre_type: joueur.nom_type_offre ,nom_offres: joueur.nom_offre , id_offre_and_type: joueur.id_offre_and_type }'>delete</mat-icon> </td>
+            <!-- <td><a [routerLink] = "['deleteTypeOffre']" [queryParams] ='{nom_offre_type: joueur.nom_type_offre ,nom_offres: joueur.nom_offre , id_offre_and_type: joueur.id_offre_and_type }'>delete</a></td> -->
         </tr>
         <tbody>
     </table>
@@ -44,6 +46,10 @@
         <span class="success">{{ message }}</span> <br/>
         <div class="btn-block">
           <button (click) = "generalInsert()">INSERER</button>
+          <!-- <button class="cancel" [routerLink] = "['offres']">ANNULER</button> -->
+        </div>
+        <div class="btn-block">
+          
         </div>
       </fieldset>
     </div>

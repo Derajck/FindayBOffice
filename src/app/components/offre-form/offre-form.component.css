@@ -91,6 +91,9 @@ html, body {
     .success{
         color: rgb(8, 251, 45);
     }
+    .cancel{
+        background-color: #e21a08;
+    }
 }
 
 *{
@@ -205,5 +208,5 @@ html, body {
         display: block;
         text-align: center;
     }
-    
+
 }

@@ -1,5 +1,6 @@
 <h2>Liste des transactions non validées</h2>
 <div class="table-wrapper">
+    <ng4-loading-spinner></ng4-loading-spinner>
     <table class="fl-table">
         <thead>
         <tr>
@@ -13,6 +14,7 @@
         </tr>
         </thead>
         <tbody>
+            
         <tr *ngFor = "let joueur of MvlNonValide">
             <td>{{ joueur.id_mobile_money }}</td>
             <td>{{ joueur.nom }}</td>

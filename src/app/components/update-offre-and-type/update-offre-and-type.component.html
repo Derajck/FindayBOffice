@@ -14,7 +14,8 @@
       <span class="error">{{ error_message }}</span> <br/>
       <span class="success">{{ message }}</span> <br/>
       <div class="btn-block">
-        <button (click) = "UpdateGen()">UPDATE</button>
+        <button (click) = "UpdateGen()">UPDATE</button>&nbsp;
+        <button class="cancel" [routerLink] = "['/offres']">ANNULER</button>
       </div>
     </fieldset>
     <hr>

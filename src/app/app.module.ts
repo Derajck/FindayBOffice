@@ -3,7 +3,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';s
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -53,7 +53,7 @@ import {MatIconModule} from '@angular/material/icon'
     MatButtonModule,
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
     // Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [],

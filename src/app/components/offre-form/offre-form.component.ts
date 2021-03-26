@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from '../../services/admin.service';
 
 @Component({
@@ -11,15 +12,13 @@ export class OffreFormComponent implements OnInit {
   error_message : string = '';
   message : string = '';
   detailOffre :any;
-  
-
   nom_offre : any = '';
   value : any = '';
   duree_valide : any ='';
   prio : any ='';
 
   validite :boolean = false;
-  constructor(private AdminService: AdminService) { }
+  constructor(private AdminService: AdminService,private route : ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
     this.getDetailOffres();
@@ -43,6 +42,7 @@ export class OffreFormComponent implements OnInit {
     const onSuccess = response => {
       if (response['status'] == 200) {
         this.message = 'Succes modification';
+        this.router.navigate(['/offres']);
       } else {
         this.error_message = 'Erreur modification';
       }

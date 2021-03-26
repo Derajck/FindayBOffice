@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class DeleteTypeOffreComponent implements OnInit {
 
   error_message:string ='';
   message : string ='';
-  constructor(private route : ActivatedRoute,private adminService : AdminService) { }
+  constructor(private route : ActivatedRoute,private adminService : AdminService,private router:Router) { }
 
   ngOnInit(): void {
     this.id_offre_and_type=this.route.snapshot.queryParamMap.get('id_offre_and_type');
@@ -29,10 +29,12 @@ export class DeleteTypeOffreComponent implements OnInit {
     const onSuccess = response => {
       if (response['status'] == 200) {
         this.message = 'Succes modification';
+        this.router.navigate(['/offres']);
       } else {
         this.error_message = 'Erreur modification';
       }
       console.log(response);
+      
     }
 
     const onError = response => {

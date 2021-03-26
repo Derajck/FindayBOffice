@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from '../../services/admin.service';
 // import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
 
@@ -14,13 +14,11 @@ export class UpdateOffreComponent implements OnInit {
   cout: any='';
   duree_valide: any='';
   priorite:any='';
-
   nom_offre_init :any='';
-
   message : string ='';
   error_message : string ='';
   validite :boolean = false;
-  constructor(private route : ActivatedRoute,private AdminService:AdminService) { }
+  constructor(private route : ActivatedRoute,private AdminService:AdminService,private router:Router) { }
 
   ngOnInit(): void {
     this.nom_offre = this.route.snapshot.queryParamMap.get('nom_offre');
@@ -61,10 +59,12 @@ export class UpdateOffreComponent implements OnInit {
       const onSuccess = response => {
         if (response['status'] == 200) {
           this.message = 'Succes modification';
+          this.router.navigate(['/offres']);
         } else {
           this.error_message = 'Erreur modification';
         }
         console.log(response);
+        
       }
   
       const onError = response => {

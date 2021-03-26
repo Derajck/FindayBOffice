@@ -87,7 +87,7 @@ insertOffreType (input) {
 
   deleteOffreType (idOffreType) {
     const options = this.toolsServ.formOption(); // headers
-    return this.http.delete(base_url + '/deleteoffreandtype/' + idOffreType, options);
+    return this.http.get(base_url + '/deleteoffreandtype/' + idOffreType);
   }
   
 }

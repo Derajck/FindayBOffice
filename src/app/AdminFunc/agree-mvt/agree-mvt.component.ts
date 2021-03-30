@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -13,11 +13,11 @@ export class AgreeMVTComponent implements OnInit {
   value : any ='';
   num: any ='';
   date_mvt :any ='';
-  
+
   error_message:string ='';
   message : string ='';
 
-  constructor(private route : ActivatedRoute,private adminService : AdminService) { }
+  constructor(private route : ActivatedRoute,private adminService : AdminService,private router:Router) { }
 
   ngOnInit(): void {
     this.idmvt=this.route.snapshot.queryParamMap.get('idmvt');
@@ -34,6 +34,7 @@ export class AgreeMVTComponent implements OnInit {
     const onSuccess = response => {
       if (response['status'] == 200) {
         this.message = 'Succes modification';
+         this.router.navigate(['/liste']);
       } else {
         this.error_message = 'Erreur modification';
       }

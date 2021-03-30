@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-update-offre-and-type',
@@ -19,7 +19,7 @@ export class UpdateOffreAndTypeComponent implements OnInit {
   message : string ='';
   error_message : string ='';
   validite :boolean = false;
-  constructor(private route : ActivatedRoute,private AdminService:AdminService) { }
+  constructor(private route : ActivatedRoute,private AdminService:AdminService,private router:Router) { }
 
   ngOnInit(): void {
     this.nom_type_offre = this.route.snapshot.queryParamMap.get('nom_type_offre');
@@ -48,22 +48,23 @@ export class UpdateOffreAndTypeComponent implements OnInit {
       const input = {
         valeur : this.valeur
       };
-  
+
       const onSuccess = response => {
         if (response['status'] == 200) {
           this.message = 'Succes modification';
+          this.router.navigate(['/offres']);
         } else {
           this.error_message = 'Erreur modification';
         }
         console.log(response);
       }
-  
+
       const onError = response => {
         this.error_message = 'Erreur interne';
       }
-  
+
       this.AdminService.updateOffreType(this.id_offre_and_type, input).subscribe(onSuccess, onError);
-    
+
   }
 
 }

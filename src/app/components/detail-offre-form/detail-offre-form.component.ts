@@ -43,9 +43,9 @@ export class DetailOffreFormComponent implements OnInit {
   }
   insert(){
     const input = {
-      nomOffre : this.offre,
-      MoAr : this.MoAr,
-      type: this.type
+      nom_offre : this.offre,
+      valeur : this.MoAr,
+      nom_type_offre: this.type
     };
 
     console.log( this.offre);
@@ -62,7 +62,7 @@ export class DetailOffreFormComponent implements OnInit {
     const onError = response => {
       this.error_message = 'Erreur interne';
     }
-    this.AdminService.insertTypeOffre(input).subscribe(onSuccess, onError);
+    this.AdminService.insertOffreType(input).subscribe(onSuccess, onError);
   }
 
   getOffres(){

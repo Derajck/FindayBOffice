@@ -5,13 +5,13 @@
       <div class="item">
         <p>Nom d'offre</p>
         <input type="text" [(ngModel)]="nom_offre" />
-        
+
       </div>
       <div class="item">
         <p>Coût / Validite / Priorité</p>
         <div class="name-item">
           <input type="number" min="0" [(ngModel)]="cout"  placeholder="Ar" />
-          <input type="number" min="1" [(ngModel)]="duree_valide"  placeholder="Duree de validite (h)" />
+          <input type="number" min="0" [(ngModel)]="duree_valide"  placeholder="Duree de validite (h)" />
           <input type="number" placeholder="Priorite" [(ngModel)]="priorite" />
         </div>
       </div>

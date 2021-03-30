@@ -4,32 +4,32 @@
       <div class="menu-icon">
         <i class="fas fa-bars header__menu"></i>
       </div>
-    
+
       <header class="header">
         <div class="header__search">
           Admin
         </div>
         <div class="header__avatar">ADMIN</div>
       </header>
-      
+
       <aside class="sidenav">
         <div class="sidenav__close-icon">
           <i class="fas fa-times sidenav__brand-close"></i>
         </div>
         <img src="../assets/images/logo_Finday.png"  class="logo_header">
         <ul class="sidenav__list">
-          
+
           <li class="sidenav__list-item" [routerLink]="['/']">Admin</li>
           <li class="sidenav__list-item" [routerLink]="['/liste']">Transactions en attente</li>
           <li class="sidenav__list-item" [routerLink]="['/offres']">Entrer offre</li>
         </ul>
       </aside>
-    
+
       <main class="main">
         <div class="main-header">
           <div class="main-header__heading">
             <!-- <app-offre-form></app-offre-form> -->
-            
+
             <router-outlet></router-outlet>
             <!-- <router-outlet name='feeds'></router-outlet> -->
           </div>
@@ -38,28 +38,27 @@
             <!-- <router-outlet name='map'></router-outlet> -->
           </div>
         </div>
-    
-        <div class="main-overview">
-          <div class="overviewcard">
-            <div class="overviewcard__icon">Clients</div>
-            
-            <!-- <div class="overviewcard__info" *ngFor="let player of nbrClient">{{player}} {{message}}</div> -->
-            <!-- <mat-progress-spinner mode="indeterminate"></mat-progress-spinner> -->
-            <div class="overviewcard__info">{{nbrClient}}</div>
-          </div>
-          <div class="overviewcard ov2">
-            <div class="overviewcard__icon">Chiffre d'affaire</div>
-            <div class="overviewcard__info">{{chAff}} Ar</div>
-          </div>
-          <div class="overviewcard ov3">
-            <div class="overviewcard__icon">?</div>
-            <div class="overviewcard__info">?</div>
-          </div>
-        </div>
-    
+
+<div class="main-overview">
+                  <div class="overviewcard ov3">
+                      <div class="overviewcard__icon">Transaction non validée</div>
+                      <div class="overviewcard__info">{{countInvalide}}</div>
+                  </div>
+                  <div class="overviewcard">
+                      <div class="overviewcard__icon">Clients</div>
+                      <div class="overviewcard__info">{{nbrClient}}</div>
+                  </div>
+                  <div class="overviewcard ov2">
+                      <div class="overviewcard__icon">Chiffre d'affaire</div>
+                      <div class="overviewcard__info">{{chAff}} Ar</div>
+                  </div>
+
+              </div>
+
+
         <div class="main-cards">
           <div class="card">
-            
+
             <app-my-chart-ch-aff></app-my-chart-ch-aff>
           </div>
           <div class="card">
@@ -74,7 +73,7 @@
           </div>
         </div>
       </main>
-    
+
       <footer class="footer">
         <div class="footer__copyright">&copy; ETU 988/ETU 996</div>
       </footer>

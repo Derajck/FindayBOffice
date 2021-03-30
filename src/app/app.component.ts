@@ -15,11 +15,28 @@ export class AppComponent {
   nbrClient:any='';
   chAff:any='';
   message:string='';
+  countInvalide:any='';
+
   constructor(private adminService : AdminService) { }
   ngOnInit(): void {
     this.getNbrClient();
     this.getchfrAfft();
+    this.getCountInvalide();
   }
+  getCountInvalide(){
+    const onSuccess = response => {
+    if (response['status'] == 200) {
+        this.countInvalide = response['data'];
+    } else {
+        this.message = 'Erreur requete';
+    }
+}
+const onError = response => {
+    console.log("Misy erreur");
+    // this.message =response['exception'];
+}
+this.adminService.getCountInvalide().subscribe(onSuccess, onError);
+}
 
   getNbrClient(){
     const onSuccess = response => {

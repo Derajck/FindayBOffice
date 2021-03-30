@@ -5,16 +5,16 @@
         <div class="item">
           <p>Nom d'offre</p>
           <select [(ngModel)]="offre" required>
-           <option *ngFor="let title of liste_offre" [value]="title.id_offre">
-           {{title.nom_offre}} 
-           </option> 
+           <option *ngFor="let title of liste_offre" [value]="title.nom_offre">
+           {{title.nom_offre}}
+           </option>
           </select>
         </div>
         <div class="item">
           <div class="city-item">
-            <input type="number" [(ngModel)]="MoAr" min="0" placeholder="Mo ou Ar" />
+            <input type="number" [(ngModel)]="MoAr" min="0" placeholder="Mo/Ar/Sms" />
             <select [(ngModel)]="type" required>
-              <option *ngFor="let titre of type_offre" [value]="titre.id_type_offre">{{titre.nom_type_offre}}</option> 
+              <option *ngFor="let titre of type_offre" >{{titre.nom_type_offre}}</option>
             </select>
           </div>
         </div>
@@ -25,5 +25,5 @@
         </div>
       </fieldset>
     </div>
-    
+
   </body>

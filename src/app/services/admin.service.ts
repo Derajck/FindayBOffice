@@ -40,7 +40,7 @@ export class AdminService {
   }
 
   getOffre(){
-    // const options = this.toolsServ.formOption(); 
+    // const options = this.toolsServ.formOption();
     return this.http.get(base_url + '/offre');
   }
 
@@ -54,19 +54,19 @@ export class AdminService {
 
   insertOffre (input) {
       console.log(input);
-      const options = this.toolsServ.formOption(); 
+      const options = this.toolsServ.formOption();
       return this.http.post(base_url + '/saveoffre', input, options);
   }
 
   insertTypeOffre (input) {
     console.log(input);
-    const options = this.toolsServ.formOption(); 
+    const options = this.toolsServ.formOption();
     return this.http.post(base_url + '/savetypeoffre', input, options);
 }
 
 insertOffreType (input) {
   console.log(input);
-  const options = this.toolsServ.formOption(); 
+  const options = this.toolsServ.formOption();
   return this.http.post(base_url + '/saveoffreandtype', input, options);
 }
 
@@ -89,5 +89,9 @@ insertOffreType (input) {
     const options = this.toolsServ.formOption(); // headers
     return this.http.get(base_url + '/deleteoffreandtype/' + idOffreType);
   }
-  
+
+  getCountInvalide(){
+    return this.http.get(base_url + '/countinvalide');
+  }
+
 }

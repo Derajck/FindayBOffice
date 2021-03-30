@@ -17,7 +17,7 @@
             <td><mat-icon [routerLink] = "['modifierOffre']" [queryParams] ='{nom_offre: joueur.nom_offre ,cout:joueur.value,priorite : joueur.priorite, validite: joueur.duree_valide }'>edit</mat-icon> {{ joueur.nom_offre }} </td>
             <td><mat-icon [routerLink] = "['modifierTypeOffre']" [queryParams] ='{nom_offres: joueur.nom_offre ,nom_type_offre: joueur.nom_type_offre ,valeur: joueur.valeur_ot,initial:joueur.appel, id_offre_and_type: joueur.id_offre_and_type }'>edit_note</mat-icon>{{ joueur.nom_type_offre }}</td>
             <td>{{ joueur.value }}</td>
-            <td>{{ joueur.duree_valide }}</td>
+            <td>{{ joueur.duree_valideS }}</td>
             <td>{{ joueur.valeur_ot }}</td>
             <td>{{ joueur.appel }}</td>
             <td><mat-icon [routerLink] = "['deleteTypeOffre']" [queryParams] ='{nom_offre_type: joueur.nom_type_offre ,nom_offres: joueur.nom_offre , id_offre_and_type: joueur.id_offre_and_type }'>delete</mat-icon> </td>

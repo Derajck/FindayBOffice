@@ -1,0 +1,2 @@
+psql -h postgresql-24249-0.cloudclusters.net -p 24249 -U adminFinday -d FINDAY
+12345678

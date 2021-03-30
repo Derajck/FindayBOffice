@@ -21,7 +21,7 @@ export class AccueilComponent implements OnInit {
     const onSuccess = response => {
       if (response['status'] == 200) {
         this.current_list = response['data'];
-        // console.log(this.current_list?.length);
+        console.log(this.current_list);
       } else {
         this.message = 'Erreur requete';
       }

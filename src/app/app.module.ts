@@ -25,7 +25,8 @@ import { UpdateOffreAndTypeComponent } from './components/update-offre-and-type/
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DeleteTypeOffreComponent } from './AdminFunc/delete-type-offre/delete-type-offre.component'; 
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { UpdateDetailCoutComponent } from './components/update-detail-cout/update-detail-cout.component'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {MatIconModule} from '@angular/material/icon'
     LoginComponent,
     UpdateOffreComponent,
     UpdateOffreAndTypeComponent,
-    DeleteTypeOffreComponent
+    DeleteTypeOffreComponent,
+    UpdateDetailCoutComponent
     // Ng4LoadingSpinnerModule.forRoot()
   ],
   imports: [

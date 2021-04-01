@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UpdateOffreComponent } from './components/update-offre/update-offre.component';
 import { UpdateOffreAndTypeComponent } from './components/update-offre-and-type/update-offre-and-type.component';
 import { DeleteTypeOffreComponent } from './AdminFunc/delete-type-offre/delete-type-offre.component';
+import { UpdateDetailCoutComponent } from './components/update-detail-cout/update-detail-cout.component';
 
 const routes: Routes = [
     // { path: '', component: LoginComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
     { path: 'offres/modifierOffre', component: UpdateOffreComponent},
     { path: 'offres/modifierTypeOffre', component: UpdateOffreAndTypeComponent },
     { path: 'offres/deleteTypeOffre', component: DeleteTypeOffreComponent },
+    { path: 'offres/updateDetailCout', component: UpdateDetailCoutComponent}
 ];
 
 @NgModule({

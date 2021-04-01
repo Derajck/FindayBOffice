@@ -72,7 +72,6 @@ export class UpdateOffreComponent implements OnInit {
       }
 
       this.AdminService.updateOffre(this.nom_offre_init, input).subscribe(onSuccess, onError);
-
   }
 
 }

@@ -7,8 +7,12 @@
             <th>Type d'offre</th>
             <th>PRIX</th>
             <th>Durée de validité (h)</th>
+            <th>Entre-A</th>
             <th>Valeur</th>
             <th>Ar-Mo</th>
+            <th><mat-icon>phone_callback</mat-icon></th>
+            <th><mat-icon>phone_missed</mat-icon></th>
+            <th><mat-icon>emoji_flags</mat-icon></th>
             <th>Action</th>
         </tr>
         </thead>
@@ -17,9 +21,13 @@
             <td><mat-icon [routerLink] = "['modifierOffre']" [queryParams] ='{nom_offre: joueur.nom_offre ,cout:joueur.value,priorite : joueur.priorite, validite: joueur.duree_valide }'>edit</mat-icon> {{ joueur.nom_offre }} </td>
             <td><mat-icon [routerLink] = "['modifierTypeOffre']" [queryParams] ='{nom_offres: joueur.nom_offre ,nom_type_offre: joueur.nom_type_offre ,valeur: joueur.valeur_ot,initial:joueur.appel, id_offre_and_type: joueur.id_offre_and_type }'>edit_note</mat-icon>{{ joueur.nom_type_offre }}</td>
             <td>{{ joueur.value }}</td>
-            <td>{{ joueur.duree_valideS }}</td>
+            <td>{{ joueur.duree_valide }}</td>
+            <td>{{ joueur.debut }}-{{ joueur.fin }}</td>
             <td>{{ joueur.valeur_ot }}</td>
             <td>{{ joueur.appel }}</td>
+            <td><a [routerLink]="['updateDetailCout']" [queryParams] ='{id_offre_and_type:joueur.id_offre_and_type,nom_offre: joueur.nom_offre ,cout: joueur.meme , type_offre_appel: 0}' >{{ joueur.meme }}</a></td>
+            <td><a [routerLink]="['updateDetailCout']" [queryParams] ='{id_offre_and_type:joueur.id_offre_and_type,nom_offre: joueur.nom_offre ,cout: joueur.different , type_offre_appel: 1}'>{{ joueur.different }}</a></td>
+            <td><a [routerLink]="['updateDetailCout']" [queryParams] ='{id_offre_and_type:joueur.id_offre_and_type,nom_offre: joueur.nom_offre ,cout: joueur.international , type_offre_appel: 2}'>{{ joueur.international }}</a></td>
             <td><mat-icon [routerLink] = "['deleteTypeOffre']" [queryParams] ='{nom_offre_type: joueur.nom_type_offre ,nom_offres: joueur.nom_offre , id_offre_and_type: joueur.id_offre_and_type }'>delete</mat-icon> </td>
             <!-- <td><a [routerLink] = "['deleteTypeOffre']" [queryParams] ='{nom_offre_type: joueur.nom_type_offre ,nom_offres: joueur.nom_offre , id_offre_and_type: joueur.id_offre_and_type }'>delete</a></td> -->
         </tr>
@@ -53,5 +61,4 @@
         </div>
       </fieldset>
     </div>
-
 </body>

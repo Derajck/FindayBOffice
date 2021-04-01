@@ -80,6 +80,21 @@ insertOffreType (input) {
     return this.http.put(base_url + '/offreupdate/' + nomOffre, input, options);
   }
 
+  updateDetailCout(id_offre_and_type,typeAppel,input){
+    const options = this.toolsServ.formOption(); // headers
+    return this.http.put(base_url + '/detailcout/' + id_offre_and_type +'/'+typeAppel, input, options);
+  }
+
+  insertDetailCout(input){
+    const options = this.toolsServ.formOption(); // headers
+    return this.http.post(base_url + '/detailcoutInsert/', input, options);
+  }
+
+  DeleteDetailCout(id_offre_and_type,typeAppel){
+    const options = this.toolsServ.formOption(); // headers
+    return this.http.get(base_url + '/detailcoutDelete/' + id_offre_and_type +'/'+typeAppel);
+  }
+
   updateOffreType (idOffreType, input) {
     const options = this.toolsServ.formOption(); // headers
     return this.http.put(base_url + '/updateoffreandtype/' + idOffreType, input, options);

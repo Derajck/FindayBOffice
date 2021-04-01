@@ -1,0 +1,24 @@
+<div class="testbox">
+    <fieldset>
+      <!-- <mat-spinner color="warn"></mat-spinner> -->
+      <h1>{{type_modif}} detail d'appel de l'offre {{ nom_offre }}</h1>
+      <div class="item">
+        <p>Appel {{ nom_type_offre_appel }}</p>
+      </div>
+      <div class="item">
+        <p>Ar/s</p>
+        <div class="name-item">
+          <input type="number" min="0" [(ngModel)]="cout"  placeholder="Ar/s" />
+        </div>
+      </div>
+      <span class="error">{{ error_message }}</span> <br/>
+      <span class="success">{{ message }}</span> <br/>
+      <div class="btn-block">
+        <button *ngIf="update" (click) = "UpdateGen()">UPDATE</button>&nbsp;
+        <button *ngIf="insert" (click) = "InsertGen()">INSERT</button>&nbsp;
+        <button class="cancel" [routerLink] = "['/offres']">ANNULER</button>&nbsp;
+        <button class="supprimer" *ngIf="expression" (click) = "SupprimerGen()">SUPPRIMER</button>
+      </div>
+    </fieldset>
+    <hr>
+  </div>
